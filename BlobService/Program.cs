@@ -29,9 +29,12 @@ using System;
 
         foreach(var cc in containerClient.GetBlobs())
         {
-            Console.WriteLine(cc.Name);
+            Console.WriteLine("Blob that exist in the client " + cc.Name);
         }
 
+        Console.WriteLine("Downloading the blob");
+
+        blobClient.DownloadTo(locationOfFile);
 
         Console.ReadKey();
         }
